@@ -1,75 +1,113 @@
-# React + TypeScript + Vite
+# E-commerce Product Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive e-commerce product page built with React, TypeScript, and Tailwind CSS, based on the [Frontend Mentor E-commerce Product Page challenge](https://www.frontendmentor.io/).
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **GitHub:** https://github.com/jzzmiiinn/E-commerce-product-page
+- **Live Demo:** Add your deployed website URL here.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive mobile and desktop layout
+- Interactive product gallery with thumbnails
+- Image lightbox with navigation controls
+- Shopping cart with quantity and price calculations
+- Add and remove cart items
+- Shared state management using Context API and `useReducer`
+- Checkout page with order summary
+- Simulated order confirmation
+- Client-side routing with React Router
+- Custom 404 page
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Context API and `useReducer`
+- pnpm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js
+- pnpm
 
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jzzmiiinn/E-commerce-product-page.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project folder:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd E-commerce-product-page
 ```
+
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Start the development server:
+
+```bash
+pnpm dev
+```
+
+Open the local URL shown in your terminal.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── cart/
+│   │   ├── CartDropdown.tsx
+│   │   └── CartItem.tsx
+│   ├── layout/
+│   │   ├── MainLayout.tsx
+│   │   └── Navbar.tsx
+│   └── product/
+│       ├── Lightbox.tsx
+│       ├── ProductGallery.tsx
+│       ├── ProductInfo.tsx
+│       └── QuantitySelector.tsx
+├── context/
+│   └── CartContext.tsx
+├── pages/
+│   ├── CartPage.tsx
+│   └── NotFoundPage.tsx
+├── reducers/
+│   └── cartReducer.ts
+├── types/
+│   ├── cart.ts
+│   └── product.ts
+├── App.tsx
+├── index.css
+└── main.tsx
+```
+
+## What I Learned
+
+- Building reusable components with React and TypeScript
+- Managing shared state with Context API and `useReducer`
+- Implementing client-side routing
+- Creating interactive galleries and shopping cart functionality
+- Building responsive interfaces with Tailwind CSS
+
+## Acknowledgements
+
+Design inspiration and assets from [Frontend Mentor](https://www.frontendmentor.io/).
+
+## Note
+
+Checkout is a frontend demonstration only. No real payments are processed.
