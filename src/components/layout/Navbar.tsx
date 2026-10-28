@@ -1,3 +1,5 @@
+import { CartDropdown } from "../cart/CartDropdown";
+
 export const Navbar = () => {
   return (
     <header className="w-full border-b border-[hsl(220,14%,75%)]">
@@ -34,14 +36,8 @@ export const Navbar = () => {
           </ul>
         </div>
 
-        <div className="flex flex-row items-center gap-6">
-          <button
-            type="button"
-            aria-label="Open shopping cart"
-            className="rounded-md p-2 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            <img src="/icon-cart.svg" alt="" />
-          </button>
+        <div className="flex items-center gap-6">
+          <CartDropdown />
 
           <button
             type="button"

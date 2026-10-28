@@ -1,9 +1,33 @@
+import { useState } from "react";
 import { Navbar } from "./Navbar";
 import { ProductGallery } from "../product/ProductGallery";
 import { ProductInfo } from "../product/ProductInfo";
 import { QuantitySelector } from "../product/QuantitySelector";
+import { useCart } from "../../context/CartContext";
 
 export const MainLayout = () => {
+  const [quantity, setQuantity] = useState(1);
+  const { dispatch } = useCart();
+
+  const product = {
+    id: "sneaker-001",
+    name: "Fall Limited Edition Sneakers",
+    price: 125,
+    image: "/image-product-1.jpg",
+  };
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        ...product,
+        quantity,
+      },
+    });
+
+    setQuantity(1);
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -15,10 +39,14 @@ export const MainLayout = () => {
           <ProductInfo />
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <QuantitySelector />
+            <QuantitySelector
+              quantity={quantity}
+              onQuantityChange={setQuantity}
+            />
 
             <button
               type="button"
+              onClick={handleAddToCart}
               className="flex min-h-14 w-full items-center justify-center gap-4 rounded-lg bg-[hsl(26,100%,55%)] px-6 py-4 font-bold text-gray-900 shadow-lg shadow-orange-200 transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 sm:flex-1"
             >
               <img src="/icon-cart.svg" alt="" className="h-5 w-5" />
