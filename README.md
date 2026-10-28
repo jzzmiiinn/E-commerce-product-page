@@ -2,11 +2,6 @@
 
 A responsive e-commerce product page built with React, TypeScript, and Tailwind CSS, based on the [Frontend Mentor E-commerce Product Page challenge](https://www.frontendmentor.io/).
 
-## Live Demo
-
-- **GitHub:** https://github.com/jzzmiiinn/E-commerce-product-page
-- **Live Demo:** Add your deployed website URL here.
-
 ## Features
 
 - Responsive mobile and desktop layout
